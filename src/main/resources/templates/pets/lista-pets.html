@@ -11,7 +11,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/vendors.min.css" />
 	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/algaworks.min.css" />
-	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/lista-vinhos.css}" /> 
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/lista-pets.css}" /> 
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,7 +78,7 @@
 
 						<div class="col-xs-4">
 							<div class="aw-page-header-controls">
-								<a class="btn btn-primary" th:href="@{/vinhos/novo}">
+								<a class="btn btn-primary" th:href="@{/pets/novo}">
 									<i class="fa fa-plus-square"></i>
 
 									<span class="hidden-xs hidden-sm">Cadastro pet</span>
@@ -99,32 +99,31 @@
 					<table id="tabela-produtos" class="table  table-striped  table-bordered  table-hover  table-condensed  js-sticky-table">
 						<thead class="aw-table-header-solid">
 							<tr>
-								<th class="av-table-vinhos-col-codigo">Código</th>
-								<th>Nome</th>
-								<th class="av-table-vinhos-col-tipo">Tipo</th>
-								<th class="av-table-vinhos-col-valor">Valor</th>
-								<th class="av-table-vinhos-col-icons"></th>
+								<!--  <th class="av-table-pets-col-codigo">Código</th> -->
+								<th>Dono</th>
+								<th class="av-table-pets-col-tipo">Raça</th>
+								<th class="av-table-pets-col-valor">Sexo Animal</th>
+								<th class="av-table-pets-col-icons"></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="vinho: ${vinhos}">
+							<tr th:each="pet: ${pets}">
+								<!--  <td class="text-center"
+									th:text="${pet.id}"></td> -->
+								
 								<td class="text-center"
-									th:text="${vinho.id}">1</td>
-
-								<td>
-									<a th:href="@{/vinhos/{id}(id=${vinho.id})}"
-										th:text="${vinho.nome}">Vinho Azul</a>
-								</td>
-
-								<td th:text="#{|tipoVinho.${vinho.tipo}|}">Tinto</td>
-
-								<td class="text-right"
-									th:text="|R$${{vinho.valor}}|">55,00</td>
+									th:text="${pet.nomeDono}"></td>
+								
+								<td class="text-center"
+									th:text="${pet.raca}"></td>
+									
+								<td class="text-center"
+									th:text="${pet.sexoAnimal}"></td>							
 
 								<td class="text-center">
 									<form method="POST" 
-										th:onsubmit="'return confirm(\'Posso remover ' + ${vinho.nome} + '?\');'"
-										th:action="@{/vinhos/{id}(id=${vinho.id})}">
+										th:onsubmit="'return confirm(\'Posso remover ' + ${pet.nomeDono} + '?\');'"
+										th:action="@{/pets/{id}(id=${pet.id})}">
 										<input type="hidden" name="_method" value="DELETE"/>
 										<button type="submit" class="btn btn-danger btn-xs">
 											<span class="fa fa-trash"></span>
@@ -133,8 +132,8 @@
 								</td>
 							</tr> 
 
-							<tr th:if="${vinhos.empty}">
-								<td colspan="5">Nenhum vinho cadastrado</td>
+							<tr th:if="${pets.empty}">
+								<td colspan="5">Nenhum pet cadastrado</td>
 							</tr>
 						</tbody>
 					</table>

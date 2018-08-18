@@ -1,4 +1,4 @@
-package com.algaworks.vinhos.controller;
+package br.com.controller;
 
 import javax.validation.Valid;
 
@@ -13,18 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.algaworks.vinhos.model.EspecieAnimal;
-import com.algaworks.vinhos.model.Pet;
-import com.algaworks.vinhos.model.TipoVinho;
-import com.algaworks.vinhos.model.Vinho;
-import com.algaworks.vinhos.repository.Pets;
+import br.com.model.EspecieAnimal;
+import br.com.model.Pet;
+import br.com.model.SexoAnimal;
+import br.com.repository.PetsRepository;
 
 @Controller
 @RequestMapping("/pets")
 public class PetController {
 
 	@Autowired
-	private Pets pets;
+	private PetsRepository pets;
 	
 	@GetMapping("/novo")
 	public ModelAndView novo(Pet pet) {
@@ -32,6 +31,7 @@ public class PetController {
 		
 		modelAndView.addObject(pet);
 		modelAndView.addObject("especie", EspecieAnimal.values());
+		modelAndView.addObject("sexo", SexoAnimal.values());
 		
 		return modelAndView ;
 	}
@@ -56,10 +56,9 @@ public class PetController {
 	}
 	
 	@GetMapping
-	public ModelAndView listarVinhos() {
+	public ModelAndView listarPets() {
 		ModelAndView modelAndView =  new ModelAndView("pets/lista-pets");
-		modelAndView.addObject("vinhos", pets.findAll());
-		
+		modelAndView.addObject("pets", pets.findAll());
 		return modelAndView;
 	}
 	

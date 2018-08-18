@@ -122,6 +122,20 @@
 					</div>
 					
 					<div class="form-group">
+						<label for="email">Email do  Dono</label>
+
+						<input id="emailDono" type="text" class="form-control" 
+							th:field="*{email}"/>
+					</div>
+					
+					<div class="form-group">
+						<label for="endereco">Endereço</label>
+
+						<input id="endereco" type="text" class="form-control" 
+							th:field="*{endereco}"/>
+					</div>
+					
+					<div class="form-group">
 						<label for="nomeAnimal">Nome do Pet</label>
 
 						<input id="nomeAnimal" type="text" class="form-control" 
@@ -141,16 +155,22 @@
 								</select>
 							</div>
 						</div>
+					    <div class="col-sm-6">
+							<div class="form-group">
+								<label for="sexoAnimal">Sexo</label>
 
-						<div class="col-sm-6">
-							<label for="sexo">Sexo do Pet</label>
-	
-							<input id="sexo" type="text" class="form-control" 
-								th:field="*{sexo}"/>
-						</div>
+								<select id="sexoAnimal" class="form-control"
+								 	th:field="*{sexoAnimal}">
+									<option value="">Selecione o sexo</option>
+									<option th:each="sexoAnimal: ${sexo}"
+										th:value="${sexoAnimal}" th:text="#{|sexo.${sexoAnimal}|}" >Opção 1</option>
+								</select>
+							</div>
+						</div> 
+						
 					</div>
 					
-					<div>
+					<div class="row">
 						<div class="col-sm-6">
 							<label for="raca">Raça do Pet</label>
 	
@@ -164,19 +184,21 @@
 								th:field="*{idadeAnimal}"/>
 						</div>	
 					</div>
-
+					
+					<div class="row">	
 					<div class="form-group">
 						<button class="btn  btn-primary" type="submit">Salvar</button>
+					</div>
 					</div>
 				</form>
 			</div>
 		</section>
 
-		<!-- <footer class="aw-layout-footer  js-content">
+		<footer class="aw-layout-footer  js-content">
 			<div class="container-fluid">
-				<span class="aw-footer-disclaimer">&copy; 2017 AlgaWorks. Todos os direitos reservados.</span>
+				<span class="aw-footer-disclaimer">&copy; 2018 Pet 2 Love. Todos os direitos reservados.</span>
 			</div>
-		</footer> -->
+		</footer>
 	</div>
 
 	<script src="/layout/javascripts/vendors.min.js"></script>

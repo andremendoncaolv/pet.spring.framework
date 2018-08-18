@@ -1,43 +1,79 @@
-package com.algaworks.vinhos.model;
+package br.com.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-public class Pet {
+@Table(name = "PET", schema = "MYPET")
+public class Pet implements Serializable{
+
+	private static final long serialVersionUID = 8538286187848914352L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "PET_ID")
 	private Long id;
 	
+	@Column(name = "NOME_DONO")
 	@NotBlank
 	private String nomeDono;
 	
+	@Column(name = "NOME_ANIMAL")
 	@NotBlank
 	private String nomeAnimal;
 	
+	@Column(name = "ESPECIE_ANIMAL")
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private EspecieAnimal especieAnimal;
 	
+	@Column(name = "RACA")
 	@NotBlank
 	private String raca;
 	
-	@NotBlank
+	@Column(name = "IDADE_ANIMAL")
 	private Integer idadeAnimal;
 	
-	private String sexo;
+	@Column(name = "SEXO_ANIMAL")
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private SexoAnimal sexoAnimal;
 	
+	@Column(name = "ENDERECO")
 	private String endereco;
 	
+	@Column(name = "EMAIL")
 	private String email;
+	
+	public Pet() {
+		super();
+	}
+	
+	public Pet(Long id, String nomeDono, String nomeAnimal, String especieAnimal,
+			String raca, Integer idadeAnimal, String sexoAnimal, String endereco,
+			String email) {
+		super();
+		this.id = id;
+		this.nomeDono = nomeDono;
+		this.nomeAnimal = nomeAnimal;
+		this.especieAnimal = getEspecieAnimal();
+		this.sexoAnimal = getSexoAnimal();
+		this.idadeAnimal = idadeAnimal;
+		this.endereco = endereco;
+		this.email = email;
+	}
+	
 
 	public Long getId() {
 		return id;
@@ -128,11 +164,12 @@ public class Pet {
 		return true;
 	}
 
-	public String getSexo() {
-		return sexo;
+	public SexoAnimal getSexoAnimal() {
+		return sexoAnimal;
 	}
 
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
+	public void setSexoAnimal(SexoAnimal sexoAnimal) {
+		this.sexoAnimal = sexoAnimal;
 	}
+
 }

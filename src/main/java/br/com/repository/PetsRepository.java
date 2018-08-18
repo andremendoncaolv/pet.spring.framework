@@ -1,9 +1,11 @@
-package com.algaworks.vinhos.repository;
+package br.com.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.algaworks.vinhos.model.Pet;
+import br.com.model.Pet;
 
-public interface Pets extends JpaRepository<Pet, Long> {
-
+@Repository("petRepository")
+public interface PetsRepository extends JpaRepository<Pet, Long> {
+	Pet findById(Long id);
 }

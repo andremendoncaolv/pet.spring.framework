@@ -1,7 +1,6 @@
-package com.algaworks.vinhos.model;
+package br.com.model;
 
 public enum EspecieAnimal {
 	
 	CAO, GATO
-
 }
