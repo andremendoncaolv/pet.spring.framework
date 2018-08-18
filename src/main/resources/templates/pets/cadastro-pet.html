@@ -7,10 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- <title>AlgaWorks</title> -->
-
 	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/vendors.min.css" />
-	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/algaworks.min.css" />
+	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/pet2love.min.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +24,7 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand  hidden-xs" href="#">
-						<img alt="AlgaWorks" th:src="@{/layout/images/logo.png}" />
+						<img alt="Pet 2 Love" th:src="@{/layout/images/logo.png}" />
 					</a>
 
 					<ul class="nav  navbar-nav">
@@ -124,7 +122,7 @@
 					<div class="form-group">
 						<label for="email">Email do  Dono</label>
 
-						<input id="emailDono" type="text" class="form-control" 
+						<input id="emailDono" type="email" class="form-control"
 							th:field="*{email}"/>
 					</div>
 					
@@ -180,11 +178,10 @@
 						<div class="col-sm-6">
 							<label for="idadeAnimal">Idade do Pet</label>
 	
-							<input id="idadeAnimal" type="text" class="form-control" 
+							<input id="idadeAnimal" type="number" class="form-control" 
 								th:field="*{idadeAnimal}"/>
 						</div>	
 					</div>
-					
 					<div class="row">	
 					<div class="form-group">
 						<button class="btn  btn-primary" type="submit">Salvar</button>
@@ -202,7 +199,7 @@
 	</div>
 
 	<script src="/layout/javascripts/vendors.min.js"></script>
-	<script src="/layout/javascripts/algaworks.min.js"></script>
+	<script src="/layout/javascripts/pet2love.min.js"></script>
 	<script src="/javascripts/vendors/jquery.mask.min.js"></script>
 
 	<script>
