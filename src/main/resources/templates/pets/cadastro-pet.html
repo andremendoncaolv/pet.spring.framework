@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/vendors.min.css" />
 	<link rel="stylesheet" type="text/css" href="/layout/stylesheets/pet2love.min.css" />
@@ -179,7 +179,7 @@
 						<div class="col-sm-6">
 							<label for="idadeAnimal">Idade do Pet</label>
 	
-							<input id="idadeAnimal" type="number" class="form-control" 
+							<input id="idadeAnimal" type="number" min="0" class="form-control" 
 								th:field="*{idadeAnimal}"/>
 						</div>	
 					</div>
@@ -189,6 +189,7 @@
 					</div>
 					</div>
 				</form>
+				<button class="btn  btn-facebook" type="">Usar o Facebook</button>
 			</div>
 		</section>
 
@@ -200,7 +201,7 @@
 	</div>
 
 	<script src="/layout/javascripts/vendors.min.js"></script>
-	<script src="/layout/javascripts/pet2love.min.js"></script>
+	<!--  <script src="/layout/javascripts/pet2love.min.js"></script> -->
 	<script src="/javascripts/vendors/jquery.mask.min.js"></script>
 
 	<script>

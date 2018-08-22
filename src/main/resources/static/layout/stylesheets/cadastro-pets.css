@@ -1,3 +1,17 @@
 .logotipo {
 	margin-top: -53px;
 }
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #1e94d2;
+  border-color: #1c8bc5;
+  margin-top: 12px;
+  margin-left: 14px;
+}
+
+.btn-facebook {
+  color: #ffffff;
+  background-color: #1e94d2;
+  border-color: #1c8bc5;
+}
