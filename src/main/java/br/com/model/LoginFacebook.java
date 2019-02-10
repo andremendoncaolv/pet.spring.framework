@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.json.JSONObject;
+
 public class LoginFacebook {
 	
 	private static final String client_secret = "";
