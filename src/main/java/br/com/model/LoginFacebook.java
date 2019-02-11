@@ -7,12 +7,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LoginFacebook {
 	
 	private static final String client_secret = "";
 	private static final String client_id = "2105340609784344";
-	private static final String redirect_uri = "https://localgost:8080/petlove2/loginfdresponse";
+	private static final String redirect_uri = "https://localhost:8080/pet2love/loginfdresponse";
 	
 	public void obterUsuarioFacebook(String code) throws MalformedURLException, IOException {
 		
