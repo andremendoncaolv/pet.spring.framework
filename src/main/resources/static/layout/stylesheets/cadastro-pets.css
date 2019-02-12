@@ -11,7 +11,10 @@
 }
 
 .btn-facebook {
-  color: #ffffff;
-  background-color: #1e94d2;
-  border-color: #1c8bc5;
+  background: #4267b2;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  text-align: center;
+  width: 150px;
 }
