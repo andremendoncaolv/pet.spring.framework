@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoginFacebook {
 	
-	private static final String client_secret = "";
+	private static final String client_secret = "85591c0cfc2fd82e79a872024eebb05b";
 	private static final String client_id = "2105340609784344";
 	private static final String redirect_uri = "https://localhost:8080/pet2love/loginfdresponse";
 	
